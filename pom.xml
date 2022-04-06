@@ -39,6 +39,18 @@
 			<artifactId>guice</artifactId>
 			<version>5.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>javax.activation-api</artifactId>
+			</dependency>
 	</dependencies>
 
 	<build>
@@ -48,6 +60,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>rssserver</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources/xml</directory>
+			</resource>
+		</resources>
 	</build>
 
 </project>
