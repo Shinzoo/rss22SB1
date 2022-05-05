@@ -52,7 +52,6 @@ public class RSSGetController {
 		// Création de la page HTML avec le template "accueil.html"
 		return "accueil";
 	}
-	
 
 	@GetMapping("/help")
 	public String getHelp() {
@@ -68,11 +67,6 @@ public class RSSGetController {
 		sb.append(" <li><a href='/rss22/delete/1'>url: /rss22/delete/{guid}</a>  - Méthode DELETE - Suppression de l’article dont l’identifiant est {guid}.</li>");
 		sb.append("</ul>");
 		return (sb.toString());
-	}
-
-	@GetMapping("/test")
-	public String getTestinXML(@RequestParam(value = "search") String texte, @RequestParam(value = "nb") int nb) {
-		return ("Test : " + "<br> guid = " + nb + "<br> titre = " + texte);
 	}
 
 	@GetMapping(value = "/rss22/resume/xml", produces = MediaType.APPLICATION_XML_VALUE)
