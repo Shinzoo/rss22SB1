@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "f0f3542c-cf82-41f2-a74d-e4298769b9fa",
+		"name": "RSS22_Salas_Prevost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Request",
+			"item": [
+				{
+					"name": "index page",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "help page",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Resume xml",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Resume html",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Html by ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "XML by ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST Requet",
+			"item": [
+				{
+					"name": "Insert request",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rss22/insert?title=titre de l'article&published=02-10-2013",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rss22",
+								"insert"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "titre de l'article"
+								},
+								{
+									"key": "published",
+									"value": "02-10-2013"
+								}
+							]
+						},
+						"description": "Delete request with {guid}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Request",
+			"item": []
+		},
+		{
+			"name": "Delete request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

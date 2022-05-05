@@ -117,7 +117,7 @@ public class RSSGetController {
 		return (sb.toString());
 	}
 
-	@GetMapping("/rss22/insert")
+	@GetMapping("/rss22/testInsert")
 	public String insert() {
 		Item item = new Item();
 
