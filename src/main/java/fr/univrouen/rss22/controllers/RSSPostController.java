@@ -2,7 +2,9 @@ package fr.univrouen.rss22.controllers;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,27 +13,36 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.univrouen.rss22.model.Item;
+import fr.univrouen.rss22.model.ItemRepository;
+import fr.univrouen.rss22.model.ItemRepositoryCustom;
 import fr.univrouen.rss22.model.TestRSS;
 
 @RestController
 public class RSSPostController 
 {	
-	@RequestMapping(value = "/testpost", method = RequestMethod.POST,consumes = "application/xml")
-	public String postTest(@RequestBody String flux) {
-		return ("<result><response>Message reçu : </response>" + flux + "</result>");
-	}
-	
-	@RequestMapping(value = "/xml", produces = MediaType.APPLICATION_XML_VALUE)
-	public @ResponseBody Item getXML() {
-		Item it = new Item("12345678","Test item","2022-05-01T11:22:33");
-		return it;
-	}
+	@Autowired
+	private ItemRepositoryCustom itemRepositoryCustom;
 
-	@PostMapping(value = "/postrss", produces = MediaType.APPLICATION_XML_VALUE)
-	@ResponseBody
-	public String postRSS() throws IOException {
-		TestRSS rss = new TestRSS();
-		return rss.loadFileXML();
-	}
+	@Autowired
+	private ItemRepository itemRepository;
+	
+//	@RequestMapping(value = "/rss22/insert", method = RequestMethod.POST)
+//	public String testInsert(@RequestBody String title) {
+//		Item item = new Item();
+//
+//		long id = this.itemRepositoryCustom.getMaxItemId() + 1;
+//
+//		String titleItem = title;
+//		String published= "published";
+//
+//		item.setId(id);
+//		item.setTitle(title);
+//		item.setPublished(published);
+//		this.itemRepository.insert(item);
+//
+//		return "Inserted: " + item + item.getId() + item.getTitle() + item.getPublished();
+//	}
+	
+	
 	
 }
